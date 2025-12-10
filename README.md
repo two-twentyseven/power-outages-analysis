@@ -10,8 +10,11 @@ Power Outage Analyzanator is a detailed UCSD data science project made to serve 
 The overarching mission of this project is to pinpoint the characteristics of major power outages with higher severity as well as idenify the risk factors an energy company may consider looking into when predicting the location and severity of its next major power outage.
 
 ## Introduction of Columns
-
-
+The original raw DataFrame contains 1534 rows, corresponding to 1534 outages, and 57 columns.
+| Column | Description |
+| ----------- | ----------- |
+| `OUTAGE.DURATION` | Duration of outage events (in minutes) |
+| `DEMAND.LOSS.MW` | Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported] |
 # Data Cleaning and Exploratory Data Analysis
 
 ## Data Cleaning
@@ -47,7 +50,7 @@ Shown below is the empirical distribution of the TVDs.
 ### Total Price
 **Null Hypothesis**: The distribution of `TOTAL.PRICE` is the same when `CUSTOMERS.AFFECTED` is missing vs not missing.
 
-**Alternate hypothesis**: The distribution of 'TOTAL.PRICE' is different when `CUSTOMERS.AFFECTED` are missing vs not missing.
+**Alternate hypothesis**: The distribution of `TOTAL.PRICE` is different when `CUSTOMERS.AFFECTED` are missing vs not missing.
 
 [Insert Plot]
 
