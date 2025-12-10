@@ -42,7 +42,7 @@ In this section, we are going to observe the distribution of the Cause Category 
 **Alternate hypothesis**: The distribution of `CAUSE.CATEGORY` is different when `CUSTOMERS.AFFECTED` are missing vs not missing.
 
 <iframe
-  src="assets/CauseCategoryHisto_plot.html"
+  src="assets/CCHist_plot.html"
   width="800"
   height="600"
   frameborder="0"
