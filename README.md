@@ -12,11 +12,11 @@ The overarching mission of this project is to pinpoint the characteristics of ma
 ## Introduction of Columns
 The initial raw DataFrame consists of 1,534 observations and 57 variables, where each row represents a single power outage.
 
-
 | Column | Description |
 | ----------- | ----------- |
 | `OUTAGE.DURATION` | Duration of outage events (in minutes) |
 | `DEMAND.LOSS.MW` | Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported] |
+
 # Data Cleaning and Exploratory Data Analysis
 
 ## Data Cleaning
