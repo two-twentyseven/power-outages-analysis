@@ -67,7 +67,7 @@ Shown below is the empirical distribution of the TVDs.
 <iframe
   src="assets/TPBoxplot_plot.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
