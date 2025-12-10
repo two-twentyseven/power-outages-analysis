@@ -52,7 +52,12 @@ Through performing this permutation test, we noticed that the observed statistic
 
 Shown below is the empirical distribution of the TVDs.
 
-[Insert Plot]
+<iframe
+  src="assets/CCEmpDis_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Total Price
 **Null Hypothesis**: The distribution of `TOTAL.PRICE` is the same when `CUSTOMERS.AFFECTED` is missing vs not missing.
