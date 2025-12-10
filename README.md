@@ -55,7 +55,7 @@ Shown below is the empirical distribution of the TVDs.
 <iframe
   src="assets/CCEmpDis_plot.html"
   width="800"
-  height="600"
+  height="500"
   frameborder="0"
 ></iframe>
 
