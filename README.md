@@ -30,6 +30,9 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 # Assessment of Missingness
 
 ## NMAR Analysis
+We believe that the column `CUSTOMERS.AFFECTED`, which shows the number of customers affected by the power outage event, is likely Not Missing at Random (NMAR). NMAR means that the missing data is linked to the actual values that are missing. To determine whether this column is NMAR, we calculated the percentage of missing values and found that they occur most often in certain categories like “Fuel Supply Emergency,” “Public Appeal,” and “Intentional Attack.” If “threats” or “requests” do not cause any power loss for users, the actual number of users affected is 0. We think the data reporters may have left the field blank because they felt it was not applicable.
+
+Another piece of data that would make the `CUSTOMERS.AFFECTED` column Missing at Random (MAR) is a variable that shows if a physical outage actually happened. We would use `1` to indicate power was disconnected for at least one customer and `0` to indicate the event was just an alert with no service loss. Having this information would change the reliance from the unknown value (the missing count of 0) to this new Yes/No variable, thus meeting the MAR definition.
 
 ## Missingness Dependency
 We selected the `CUSTOMERS.AFFECTED` column to analyze the dependency of the missingess in comparison to the `TOTAL.PRICE` and `CAUSE.CATEGORY` columns.
