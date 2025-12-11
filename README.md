@@ -12,7 +12,7 @@ Our analysis is centered around one research question: **To what extent do regio
 
 ## Introduction of Columns
 The initial raw DataFrame consists of 1,534 observations and 57 variables, where each row represents a single power outage. For the sake of our analysis, we will be focusing on the columns listed below.
-| <div style="text-align: center">Column</div> | <div style="text-align: center">Description</div> |
+<div style="text-align: center">Column</div> | <div style="text-align: center">Description</div>
 | :--- | :--- |
 | `OUTAGE.DURATION` | Duration of outage events (in minutes) |
 | `DEMAND.LOSS.MW` | Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported] |
