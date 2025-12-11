@@ -5,9 +5,10 @@ By: Jocelyn Ng & Holden Flett
 
 # Introduction
 ## General Introduction
+Throughout this project, we leveraged a dataset regarding major power outage events in the continental U.S. between January 2000 through July 2016. According to the Department of Energy, major outages are defined as “those that impacted at least 50,000 customers or caused an unplanned firm load loss of at least 300MW” [1]. In addition to the general major outage data, this dataset is characterized by geographical location, date and time, regional climate, land-use, electricity consumption patterns, and economic characteristics of the states impacted by the outages.
 
+Our analysis is centered around one research question: **To what extent do regional climatic and economic characteristics impact the severity (duration) of a major power outage?** We use various data techniques to explore the imapct of climate anomalies, urbanization, and economic output on outage metrics. Our main focus will be on outage duration. Through analyzing these characteristics, we aim to develop a model that predicts the severity of future major outages. Attempting to fulfill our mission in enhancing data-driven decisions in the real-world, our predicitive model has the potential to optimize energy providers’ allocation of resources and emergency response.
 
-[Insert research question and polish this section]
 
 ## Introduction of Columns
 The initial raw DataFrame consists of 1,534 observations and 57 variables, where each row represents a single power outage. For the sake of our analysis, we will be focusing on the columns listed below.
@@ -125,11 +126,4 @@ Shown below is the empirical distribution of the Absolute Difference of Means.
 # Fairness Analysis
 
 # References
-[1] Sayanti Mukherjee, Roshanak Nateghi, Makarand Hastak,
-Data on major power outage events in the continental U.S.,
-Data in Brief,
-Volume 19,
-2018,
-Pages 2079-2083,
-ISSN 2352-3409,
-https://doi.org/10.1016/j.dib.2018.06.067.
+[1] S. Mukherjee, R. Nateghi, and M. Hastak, “Data on major power outage events in the continental U.S.,” Data in Brief, vol. 19, pp. 2079–2083, 2018, doi: 10.1016/j.dib.2018.06.067.
