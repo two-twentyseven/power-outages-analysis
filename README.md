@@ -1,13 +1,11 @@
 # Power Outage Analyzanator
-Power Outage Analyzanator is a detailed UCSD data science project made to serve as documentation for a Power Outage Analysis tool.
+Power Outage Analyzanator is a detailed UCSD data science project that seeks to explore how data-driven insights may influence real-world decisions. This project features various comprehensive steps, from cleaning data and exploratory data analysis, to testing hypotheses and building a functioning predictive model. The overarching mission of this project is to pinpoint the characteristics of major power outages with higher severity as well as idenify the risk factors an energy company may consider looking into when predicting the location and severity of its next major power outage.
 
 By: Jocelyn Ng & Holden Flett
 
 # Introduction
 ## General Introduction
-Power Outage Analyzanator is a detailed UCSD data science project made to serve as documentation for a Power Outage Analysis tool. The project features comprehensive steps from cleaning data and exploratory data analysis, to testing hypotheses and building a functioning predictive model.
 
-The overarching mission of this project is to pinpoint the characteristics of major power outages with higher severity as well as idenify the risk factors an energy company may consider looking into when predicting the location and severity of its next major power outage.
 
 [Insert research question and polish this section]
 
