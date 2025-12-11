@@ -9,13 +9,44 @@ Power Outage Analyzanator is a detailed UCSD data science project made to serve 
 
 The overarching mission of this project is to pinpoint the characteristics of major power outages with higher severity as well as idenify the risk factors an energy company may consider looking into when predicting the location and severity of its next major power outage.
 
+[Insert research question and polish this section]
+
 ## Introduction of Columns
 The initial raw DataFrame consists of 1,534 observations and 57 variables, where each row represents a single power outage. For the sake of our analysis, we will be...
 
-| Column | Description |
-| ----------- | ----------- |
-| `OUTAGE.DURATION` | Duration of outage events (in minutes) |
-| `DEMAND.LOSS.MW` | Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported] |
+|           Column          |                                                  Description                                                  |
+|:-------------------------:|:-------------------------------------------------------------------------------------------------------------:|
+|     `OUTAGE.DURATION`     |                                     Duration of outage events (in minutes)                                    |
+|      `DEMAND.LOSS.MW`     | Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported] |
+|    `CUSTOMERS.AFFECTED`   |                                                                                                               |
+|     `TOTAL.CUSTOMERS`     |                                                                                                               |
+|        `U.S._STATE`       |                                                                                                               |
+|       `NERC.REGION`       |                                                                                                               |
+|      `CLIMATE.REGION`     |                                                                                                               |
+|           `YEAR`          |                                                                                                               |
+|          `MONTH`          |                                                                                                               |
+|      `ANOMALY.LEVEL`      |                                                                                                               |
+|     `CLIMATE.CATEGORY`    |                                                                                                               |
+|      `CAUSE.CATEGORY`     |                                                                                                               |
+|  `CAUSE.CATEGORY.DETAIL`  |                                                                                                               |
+|       `TOTAL.PRICE`       |                                                                                                               |
+|        `RES.PRICE`        |                                                                                                               |
+|        `COM.PRICE`        |                                                                                                               |
+|        `IND.PRICE`        |                                                                                                               |
+|       `TOTAL.SALES`       |                                                                                                               |
+|        `RES.SALES`        |                                                                                                               |
+|        `COM.SALES`        |                                                                                                               |
+|        `IND.SALES`        |                                                                                                               |
+|     `PC.REALGSP.STATE`    |                                                                                                               |
+|       `UTIL.CONTRI`       |                                                                                                               |
+|        `POPULATION`       |                                                                                                               |
+|       `POPPCT_URBAN`      |                                                                                                               |
+|       `POPDEN_URBAN`      |                                                                                                               |
+|        `AREAPCT_UC`       |                                                                                                               |
+|    `OUTAGE.START.DATE`    |                                                                                                               |
+|    `OUTAGE.START.TIME`    |                                                                                                               |
+| `OUTAGE.RESTORATION.DATE` |                                                                                                               |
+| `OUTAGE.RESTORATION.TIME` |                                                                                                               |
 
 # Data Cleaning and Exploratory Data Analysis
 
