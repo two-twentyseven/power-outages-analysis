@@ -52,12 +52,14 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 ## Data Cleaning
 
 ## Univariate Analysis
+
 <iframe
-  src="assets/outageCauses_plot.html"
+  src="assets/hierarchy_of_causes.html"
   width="800"
   height="500"
   frameborder="0"
 ></iframe>
+
 ## Bivariate Analysis
 
 ## Interesting Aggregates
