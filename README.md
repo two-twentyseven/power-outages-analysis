@@ -17,35 +17,35 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 |:-------------------------:|:-------------------------------------------------------------------------------------------------------------:|
 |     `OUTAGE.DURATION`     |                                     Duration of outage events (in minutes)                                    |
 |      `DEMAND.LOSS.MW`     | Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported] |
-|    `CUSTOMERS.AFFECTED`   |                                                                                                               |
-|     `TOTAL.CUSTOMERS`     |                                                                                                               |
-|        `U.S._STATE`       |                                                                                                               |
-|       `NERC.REGION`       |                                                                                                               |
-|      `CLIMATE.REGION`     |                                                                                                               |
-|           `YEAR`          |                                                                                                               |
-|          `MONTH`          |                                                                                                               |
-|      `ANOMALY.LEVEL`      |                                                                                                               |
-|     `CLIMATE.CATEGORY`    |                                                                                                               |
-|      `CAUSE.CATEGORY`     |                                                                                                               |
-|  `CAUSE.CATEGORY.DETAIL`  |                                                                                                               |
-|       `TOTAL.PRICE`       |                                                                                                               |
-|        `RES.PRICE`        |                                                                                                               |
-|        `COM.PRICE`        |                                                                                                               |
-|        `IND.PRICE`        |                                                                                                               |
-|       `TOTAL.SALES`       |                                                                                                               |
-|        `RES.SALES`        |                                                                                                               |
-|        `COM.SALES`        |                                                                                                               |
-|        `IND.SALES`        |                                                                                                               |
-|     `PC.REALGSP.STATE`    |                                                                                                               |
-|       `UTIL.CONTRI`       |                                                                                                               |
-|        `POPULATION`       |                                                                                                               |
-|       `POPPCT_URBAN`      |                                                                                                               |
-|       `POPDEN_URBAN`      |                                                                                                               |
-|        `AREAPCT_UC`       |                                                                                                               |
-|    `OUTAGE.START.DATE`    |                                                                                                               |
-|    `OUTAGE.START.TIME`    |                                                                                                               |
-| `OUTAGE.RESTORATION.DATE` |                                                                                                               |
-| `OUTAGE.RESTORATION.TIME` |                                                                                                               |
+|    `CUSTOMERS.AFFECTED`   |  Number of customers affected by the power outage event|
+|     `TOTAL.CUSTOMERS`     |  Annual number of total customers served in the U.S. state |
+|        `U.S._STATE`       |  Represents all the states in the continental US.|
+|       `NERC.REGION`       | The North American Electric Reliability Corporation (NERC) regions involved in the outage event |
+|      `CLIMATE.REGION`     | U.S. Climate regions as specified by National Centers for Environmental Information (nine climatically consistent regions in continental U.S.A.)|
+|           `YEAR`          |   Indicates the year when the outage event occurred|
+|          `MONTH`          |     Indicates the month when the outage event occurred|
+|      `ANOMALY.LEVEL`      |    Oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season |
+|     `CLIMATE.CATEGORY`    |  the climate episodes corresponding to the years (“Warm”, “Cold” or “Normal”)|
+|      `CAUSE.CATEGORY`     |  Categories of all the events causing the major power outages|
+|  `CAUSE.CATEGORY.DETAIL`  | Detailed description of the event categories causing the major power outages|
+|       `TOTAL.PRICE`       |  Average monthly electricity price in the U.S. state (cents/kilowatt-hour)|
+|        `RES.PRICE`        | Monthly electricity price in the residential sector (cents/kilowatt-hour)|
+|        `COM.PRICE`        | Monthly electricity price in the commercial sector (cents/kilowatt-hour)|
+|        `IND.PRICE`        |  Monthly electricity price in the industrial sector (cents/kilowatt-hour)|
+|       `TOTAL.SALES`       | Total electricity consumption in the U.S. state (megawatt-hour)|
+|        `RES.SALES`        | Electricity consumption in the residential sector (megawatt-hour)|
+|        `COM.SALES`        | Electricity consumption in the commercial sector (megawatt-hour)|
+|        `IND.SALES`        | Electricity consumption in the industrial sector (megawatt-hour)|
+|     `PC.REALGSP.STATE`    | Per capita real gross state product (GSP) in the U.S. state (measured in 2009 chained U.S. dollars)|
+|       `UTIL.CONTRI`       |  Utility industry׳s contribution to the total GSP in the State (expressed as percent of the total real GDP that is contributed by the Utility industry) (in %)|
+|        `POPULATION`       |  Population in the U.S. state in a year|
+|       `POPPCT_URBAN`      | Percentage of the total population of the U.S. state represented by the urban population (in %)|
+|       `POPDEN_URBAN`      | Population density of the urban areas (persons per square mile)|
+|        `AREAPCT_UC`       | Percentage of the land area of the U.S. state represented by the land area of the urban clusters (in %)|
+|    `OUTAGE.START.DATE`    |  The day of the year when the outage event started (as reported by the corresponding Utility in the region)|
+|    `OUTAGE.START.TIME`    |  The time of the day when the outage event started (as reported by the corresponding Utility in the region)|
+| `OUTAGE.RESTORATION.DATE` | The day of the year when power was restored to all the customers (as reported by the corresponding Utility in the region)|
+| `OUTAGE.RESTORATION.TIME` | The time of the day when power was restored to all the customers (as reported by the corresponding Utility in the region)|
 
 # Data Cleaning and Exploratory Data Analysis
 
