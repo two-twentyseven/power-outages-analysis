@@ -131,7 +131,7 @@ We grouped the data by `CAUSE.CATEGORY` and calculated the frequency (count) and
 | West               |             524.81  |                  6154.6 |              857.677 |    214.857  |         2028.11 |          2928.37 |                         363.667 |
 | West North Central |              61     |                   nan   |               23.5   |     68.2    |          439.5  |          2442.5  |                         nan     |
 
-We created a pivot table using `CLIMATE.REGION` and `CAUSE.CATEGORY` to look at the average outage duration in different environmental contexts. By comparing how specific causes occur in various climates, we found that severity often results from a mix of factors rather than being a single event. The Southwest region, when paired with Severe Weather, shows much higher "severe" statistics (averaging over 11,000 minutes) compared to the same cause in the Central region. This suggests that our model may need to consider both location and cause to effectively predict duration.
+This pivot table uses `CLIMATE.REGION` and `CAUSE.CATEGORY` to look at the average outage duration in different environmental contexts. By comparing how specific causes occur in various climates, we found that severity often results from a mix of factors rather than being a single event. The Southwest region, when paired with Severe Weather, shows much higher "severe" statistics (averaging over 11,000 minutes) compared to the same cause in the Central region. This suggests that our model may need to consider both location and cause to effectively predict duration.
 
 # Assessment of Missingness
 
