@@ -77,7 +77,7 @@ As a part of our Exploratory Data Analysis, we first perform a univariate analys
   frameborder="0"
   style="display: block; margin: 0 auto;"
 ></iframe>
-The heatmap, illustrating the seasonal and yearly frequency of power outages, displays a noticeable concentration of outage events during the summer months (June through August). This could potentially be due to high energy demand or seasonal weather. Additionally, it highlights a significant sudden spike in outage frequency around 2011, which appears as the "hottest" (brightest) period in the dataset compared to the relatively quieter early 2000s.
+The heatmap shows the frequency of power outages throughout the seasons and years. It clearly shows more outages occurring in the summer months from June to August. This might be due to higher energy demand or seasonal weather. It also highlights a significant spike in outages around 2011, marking it as the most active period in the data compared to the quieter early 2000s.
 
 ## Bivariate Analysis
 
