@@ -1,5 +1,5 @@
 # Power Outage Analyzanator
-Power Outage Analyzanator is a detailed UCSD data science project that seeks to explore how data-driven insights may influence real-world decisions. This project features various comprehensive steps, from cleaning data and exploratory data analysis, to testing hypotheses and building a functioning predictive model. The overarching mission of this project is to pinpoint the characteristics of major power outages with higher severity as well as idenify the risk factors an energy company may consider looking into when predicting the location and severity of its next major power outage.
+Power Outage Analyzanator is a detailed UCSD data science project that seeks to explore how data-driven insights may influence real-world decisions. This project features various comprehensive steps, from cleaning data and exploratory data analysis, to testing hypotheses and building a functioning predictive model. The overarching mission of this project is to pinpoint the characteristics of major power outages with higher severity as well as identify the risk factors an energy company may consider looking into when predicting the location and severity of its next major power outage.
 
 By: Jocelyn Ng & Holden Flett
 
@@ -34,13 +34,13 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 # Data Cleaning and Exploratory Data Analysis
 
 ## Data Cleaning
-1) Since we used most of our columns in our analysis, the only columns we needed to drop were "variables" and "POSTAL.CODE". The former being a NaN column while the latter being redundant for the U.S. state column. 
+1) Since we used most of our columns in our analysis, the only columns we needed to drop were `variables` and `POSTAL.CODE`. The former being a NaN column while the latter being redundant for the U.S. state column. 
 
 2) We assigned OBS, which is the observation unique identifier, to the index. 
 
 3) We also converted the start and end times to timestamp objects, but did not end up using them in our analysis. 
 
-4) During our regression, we scanned all non-timestamp columns for a valid R2 coefficients while fully excluding missing values during the regression. 
+4) During our regression, we scanned all non-timestamp columns for a valid R<sup>2</sup> coefficients while fully excluding missing values during the regression. 
 
 5) Aside from the variables column, we did not explicitly remove missing values, due to the specificity of how we handled them depending on the later steps (such as our MAR and NMAR analyses). 
 
@@ -147,7 +147,7 @@ We believe that the column `CUSTOMERS.AFFECTED`, which shows the number of custo
 Another piece of data that would make the `CUSTOMERS.AFFECTED` column Missing at Random (MAR) is a variable that shows if a physical outage actually happened. We would use `1` to indicate power was disconnected for at least one customer and `0` to indicate the event was just an alert with no service loss. Having this information would change the reliance from the unknown value (the missing count of 0) to this new Yes/No variable, thus meeting the MAR definition.
 
 ## Missingness Dependency
-We selected the `CUSTOMERS.AFFECTED` column to analyze the dependency of the missingess in comparison to the `TOTAL.PRICE` and `CAUSE.CATEGORY` columns.
+We selected the `CUSTOMERS.AFFECTED` column to analyze the dependency of the missingness in comparison to the `TOTAL.PRICE` and `CAUSE.CATEGORY` columns.
 
 In this section, we are going to observe the distribution of the Cause Category and Total Price when the Customers Affected column is missing versus not missing. We will do this through a permutation test with a significance level of 0.05 for both tests. The test statistic for the Cause category and Total Price permutation tests are Total Variation Distance and Absolute Difference of Means, respectively.  
 
@@ -214,7 +214,7 @@ Since our dataset is a set of descriptive qualities of power outages as well as 
 
 The problem then becomes, what’s the best prediction model for the duration of an outage? 
 
-This is a regression problem. Later in the regression process, we find that a more easily targettable column is the natural log of the duration, from which one can later derive a predicted duration after converting it back. We eventually ended up predicting based on the cause of the outage, a feature that can be typically known immediately upon initial investigation. 
+This is a regression problem. Later in the regression process, we find that a more easily targetable column is the natural log of the duration, from which one can later derive a predicted duration after converting it back. We eventually ended up predicting based on the cause of the outage, a feature that can be typically known immediately upon initial investigation. 
 
 We will primarily use R<sup>2</sup> to gauge the effectiveness of the features and MSE to evaluate our models’ predictive strength.
 
@@ -232,7 +232,7 @@ Our first step was to begin by predicting `DUR.LOG` instead of the default durat
 
 In fact, each feature improved the test R<sup>2</sup> except for `CAUSE.CATEGORY`, which plummeted our R<sup>2</sup> back down to 0.165. Realizing that most of our features were just simply noise, we decided to search for other features. 
 
-The next step involved the undertaking of evaluating every single feature in the dataframe and computing the best R<sup>2</sup> for a simple linear model to predict `DUR.LOG`. Numerical data was processed normally, all categorical data was one-hot encoded. Each model was tested with 5-fold cross validation and their R<sup>2</sup> values computed. 
+The next step involved the undertaking of evaluating every single feature in the DataFrame and computing the best R<sup>2</sup> for a simple linear model to predict `DUR.LOG`. Numerical data was processed normally, all categorical data was one-hot encoded. Each model was tested with 5-fold cross validation and their R<sup>2</sup> values computed. 
 
 In the end, only `U.S._STATE` surpassed an arbitrary 0.200 R<sup>2</sup> threshold. The combined model using one-hot encoded U.S. states and the cause categories ended up producing a model performing as such: 
 
