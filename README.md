@@ -232,12 +232,14 @@ In the end, only `U.S._STATE` surpassed an arbitrary 0.200 R<sup>2</sup> thresho
 
 1) Test R<sup>2</sup>: 0.4257727056986099 
 <br>
-2) Test MSE: 4.068471711183825 (Note this is MSE for DUR.LOG so it will be orders of magnitudes less than the first model).
+
+2) Test MSE: 4.068471711183825 (Note this is MSE for `DUR.LOG` so it will be orders of magnitudes less than the first model).
 
 Seeing as this was strikingly similar to the original models, we then removed the state column. Surprisingly, this produced a very slightly lower MSE and a slightly higher R<sup>2</sup>, indicating that the state produced unnecessary complexity:
 
 1) Test R<sup>2</sup>: 0.42789363608701747
 <br> 
+
 2) Test MSE: 4.053444655917976
 
 Seeing as our best model was one-hot encoded, there was no room for polynomial improvements. As such, our best model to predict the natural log of outage duration, was simply the cause of the outage. 
