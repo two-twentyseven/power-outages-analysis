@@ -102,7 +102,9 @@ The outage duration versus customers affected scatter plot shows a large cluster
 The heatmap shows the frequency of power outages throughout the seasons and years. It clearly shows more outages occurring in the summer months from June to August. This might be due to higher energy demand or seasonal weather. It also highlights a significant spike in outages around 2011, marking it as the most active period in the data compared to the quieter early 2000s.
 
 ## Interesting Aggregates
+
 ### Cause Category Statistics
+
 | CAUSE.CATEGORY                |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   Count |
 |:------------------------------|------------------:|---------------------:|--------:|
 | equipment failure             |          1816.91  |        101936        |      60 |
@@ -114,6 +116,7 @@ The heatmap shows the frequency of power outages throughout the seasons and year
 | system operability disruption |           728.87  |        211066        |     127 |
 
 ### Climate Region vs. Cause Category (Mean Outage Duration)
+
 | CLIMATE.REGION     |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
 |:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
 | Central            |             322     |                 10035.2 |              346.059 |    125.333  |         1410    |          3250.01 |                        2695.2   |
