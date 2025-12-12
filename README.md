@@ -210,7 +210,13 @@ Once we took a look at the value counts list of the regions, we discovered that 
 Beyond that, all of East North Central's pairs had the greatest differences among pairs. Wary of drawing conclusions from minimal data, we elected to avoid using those pairs.
 
 # Framing a Prediction Problem
-Since our dataset is a set of descriptive qualities of power outages as well as their impact, we thought it best to predict the impact of a given outage from the circumstances around it. For impact, we decided to target duration, since it is a useful quality that, when predicted, can inform victims on how long to expect an outage to last. The problem then becomes, what's the best prediction model for the duration of an outage?
+Since our dataset is a set of descriptive qualities of power outages as well as their impact, we thought it best to predict the impact of a given outage from the circumstances around it. For impact, we decided to target duration, since it is a useful quality that, when predicted, can inform victims on how long to expect an outage to continue and advise further action. 
+
+The problem then becomes, what’s the best prediction model for the duration of an outage? 
+
+This is a regression problem. Later in the regression process, we find that a more easily targettable column is the natural log of the duration, from which one can later derive a predicted duration after converting it back. We eventually ended up predicting based on the cause of the outage, a feature that can be typically known immediately upon initial investigation. 
+
+We will primarily use R<sup>2</sup> to gauge the effectiveness of the features and MSE to evaluate our models’ predictive strength.
 
 # Baseline Model
 The baseline model we used was a multilinear regression model using these features: `CAUSE.CATEGORY`(nominal), `CLIMATE.REGION`(nominal), `CLIMATE.CATEGORY`(nominal), `ANOMALY.LEVEL`(ordinal),`MONTH`(ordinal), `YEAR`(quantitative), `RES.CUSTOMERS`(quantitative), `COM.CUSTOMERS`(quantitative), and `IND.CUSTOMERS`(quantitative) to predict our `OUTAGE.DURATION`(quantitative) column. The first five columns are categorical, which we one-hot encoded, and the remaining were simply quantitative, regressed numerically (including year). 
