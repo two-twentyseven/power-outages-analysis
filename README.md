@@ -102,6 +102,29 @@ The outage duration versus customers affected scatter plot shows a large cluster
 The heatmap shows the frequency of power outages throughout the seasons and years. It clearly shows more outages occurring in the summer months from June to August. This might be due to higher energy demand or seasonal weather. It also highlights a significant spike in outages around 2011, marking it as the most active period in the data compared to the quieter early 2000s.
 
 ## Interesting Aggregates
+### Cause Category Statistics
+| CAUSE.CATEGORY                |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   Count |
+|:------------------------------|------------------:|---------------------:|--------:|
+| equipment failure             |          1816.91  |        101936        |      60 |
+| fuel supply emergency         |         13484     |             0.142857 |      51 |
+| intentional attack            |           429.98  |          1790.53     |     418 |
+| islanding                     |           200.545 |          6169.09     |      46 |
+| public appeal                 |          1468.45  |          7618.76     |      69 |
+| severe weather                |          3883.99  |        188575        |     763 |
+| system operability disruption |           728.87  |        211066        |     127 |
+
+### Climate Region vs. Cause Category (Mean Outage Duration)
+| CLIMATE.REGION     |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+|:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
+| Central            |             322     |                 10035.2 |              346.059 |    125.333  |         1410    |          3250.01 |                        2695.2   |
+| East North Central |           26435.3   |                 33971.2 |             2376.05  |      1      |          733    |          4434.82 |                        2610     |
+| Northeast          |             215.8   |                 14629.6 |              195.985 |    881      |         2655    |          4429.9  |                         773.5   |
+| Northwest          |             702     |                     1   |              373.812 |     73.3333 |          898    |          4838    |                         141     |
+| South              |             295.778 |                 17482.5 |              325.607 |    493.5    |         1163.98 |          4391.35 |                         866.074 |
+| Southeast          |             554.5   |                   nan   |              504.667 |    nan      |         2865.4  |          2662.56 |                         169.312 |
+| Southwest          |             113.8   |                    76   |              265.672 |      2      |         2275    |         11572.9  |                         329.222 |
+| West               |             524.81  |                  6154.6 |              857.677 |    214.857  |         2028.11 |          2928.37 |                         363.667 |
+| West North Central |              61     |                   nan   |               23.5   |     68.2    |          439.5  |          2442.5  |                         nan     |
 
 # Assessment of Missingness
 
