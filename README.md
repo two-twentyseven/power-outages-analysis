@@ -52,6 +52,7 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 ## Data Cleaning
 
 ## Univariate Analysis
+As a part of our Exploratory Data Analysis, we first perform a univariate analysis examining the distribution of three single variables.
 
 <iframe
   src="assets/NLogDist.html"
@@ -60,6 +61,7 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
   frameborder="0"
 ></iframe>
 
+ 
 <iframe
   src="assets/hierarchy_of_causes.html"
   width="800"
@@ -67,6 +69,7 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
   frameborder="0"
 ></iframe>
 
+ 
 <iframe
   src="assets/UniHeatmap.html"
   width="1000"
@@ -74,6 +77,7 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
   frameborder="0"
   style="display: block; margin: 0 auto;"
 ></iframe>
+The heatmap, illustrating the seasonal and yearly frequency of power outages, displays a noticeable concentration of outage events during the summer months (June through August). This could potentially be due to high energy demand or seasonal weather. Additionally, it highlights a significant sudden spike in outage frequency around 2011, which appears as the "hottest" (brightest) period in the dataset compared to the relatively quieter early 2000s.
 
 ## Bivariate Analysis
 
