@@ -69,7 +69,7 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 
 <iframe
   src="assets/UniHeatmap.html"
-  width="900"
+  width="1000"
   height="800"
   frameborder="0"
 ></iframe>
