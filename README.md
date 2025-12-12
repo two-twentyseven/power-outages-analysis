@@ -57,7 +57,7 @@ As a part of our Exploratory Data Analysis, we first perform a univariate analys
 <iframe
   src="assets/NLogDist.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 The distribution of outage durations on a logarithmic scale shows two clear peaks. This chart displays a main cluster of long-duration events that is roughly normal, centered around a log value of 8, which is about 3,000 minutes. There is also a smaller peak of very short outages near 0. This suggests that major power outages usually fit into two categories: 1) complex infrastructure repairs where most are resolved quickly, but a few unfortunate ones take much longer, and 2) a separate group of brief but significant incidents.
