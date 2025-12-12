@@ -70,6 +70,13 @@ The distribution of outage durations on a logarithmic scale shows two clear peak
   frameborder="0"
 ></iframe>
 
+<iframe
+  src="assets/climate_region_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 ## Bivariate Analysis
 
 <iframe
