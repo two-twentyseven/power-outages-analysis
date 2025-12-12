@@ -80,7 +80,8 @@ This bar chart shows how often power outages happen by cause. Severe weather sta
 This bar chart shows how often power outages happen in different climate regions. We can observe that the Northeast has the highest number of outages, around 350. The data indicates a clear drop in outage numbers from the busy Northeast and South regions down to the West North Central region, which reports the fewest outages. This trend suggests that the weather patterns and atmospheric conditions in the Northeast and South regions are much more likely to cause power disruptions than those in the West North Central or Southwest.
 
 ## Bivariate Analysis
-We aim to observe how the value of one variable changes in relation to the other, in order to better assess their impact on outage severity. In this bivariate analysis, we observed the relationship between both outage duration and customers affected statistics, as well as the frequency of year versus month.
+We aim to observe how the value of one variable changes in relation to the other, in order to better assess their impact on outage severity. 
+In this bivariate analysis, we observed the relationship between both outage duration and customers affected statistics, as well as the frequency of year versus month.
 
 <iframe
   src="assets/outage_scatterplot.html"
