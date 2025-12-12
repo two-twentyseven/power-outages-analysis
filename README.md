@@ -34,6 +34,27 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 # Data Cleaning and Exploratory Data Analysis
 
 ## Data Cleaning
+1) Since we used most of our columns in our analysis, the only columns we needed to drop were "variables" and "POSTAL.CODE". The former being a NaN column while the latter being redundant for the U.S. state column. 
+
+2) We assigned OBS, which is the observation unique identifier, to the index. 
+
+3) We also converted the start and end times to timestamp objects, but did not end up using them in our analysis. 
+
+4) During our regression, we scanned all non-timestamp columns for a valid R2 coefficients while fully excluding missing values during the regression. 
+
+5) Aside from the variables column, we did not explicitly remove missing values, due to the specificity of how we handled them depending on the later steps (such as our MAR and NMAR analyses). 
+
+6) Additionally, we added `DUR.LOG` which is the natural log of our durations. This is because the distribution of our outage durations is right skewed and logging it normalizes the column, making it easier to eventually predict.
+
+The first few rows of this cleaned `outages` DataFrame are shown below.
+|   YEAR |   MONTH | U.S._STATE   | NERC.REGION   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   | CAUSE.CATEGORY     | CAUSE.CATEGORY.DETAIL   |   HURRICANE.NAMES |   OUTAGE.DURATION |   DEMAND.LOSS.MW |   CUSTOMERS.AFFECTED |   RES.PRICE |   COM.PRICE |   IND.PRICE |   TOTAL.PRICE |   RES.SALES |   COM.SALES |   IND.SALES |   TOTAL.SALES |   RES.PERCEN |   COM.PERCEN |   IND.PERCEN |   RES.CUSTOMERS |   COM.CUSTOMERS |   IND.CUSTOMERS |   TOTAL.CUSTOMERS |   RES.CUST.PCT |   COM.CUST.PCT |   IND.CUST.PCT |   PC.REALGSP.STATE |   PC.REALGSP.USA |   PC.REALGSP.REL |   PC.REALGSP.CHANGE |   UTIL.REALGSP |   TOTAL.REALGSP |   UTIL.CONTRI |   PI.UTIL.OFUSA |   POPULATION |   POPPCT_URBAN |   POPPCT_UC |   POPDEN_URBAN |   POPDEN_UC |   POPDEN_RURAL |   AREAPCT_URBAN |   AREAPCT_UC |   PCT_LAND |   PCT_WATER_TOT |   PCT_WATER_INLAND |   DUR.LOG | OUTAGE.START        | OUTAGE.RESTORATION   |
+|-------:|--------:|:-------------|:--------------|:-------------------|----------------:|:-------------------|:-------------------|:------------------------|------------------:|------------------:|-----------------:|---------------------:|------------:|------------:|------------:|--------------:|------------:|------------:|------------:|--------------:|-------------:|-------------:|-------------:|----------------:|----------------:|----------------:|------------------:|---------------:|---------------:|---------------:|-------------------:|-----------------:|-----------------:|--------------------:|---------------:|----------------:|--------------:|----------------:|-------------:|---------------:|------------:|---------------:|------------:|---------------:|----------------:|-------------:|-----------:|----------------:|-------------------:|----------:|:--------------------|:---------------------|
+|   2011 |       7 | Minnesota    | MRO           | East North Central |            -0.3 | normal             | severe weather     | nan                     |               nan |              3060 |              nan |                70000 |       11.6  |        9.18 |        6.81 |          9.28 | 2.33292e+06 | 2.11477e+06 | 2.11329e+06 |   6.56252e+06 |      35.5491 |      32.225  |      32.2024 |         2308736 |          276286 |           10673 |           2595696 |        88.9448 |        10.644  |       0.411181 |              51268 |            47586 |          1.07738 |                 1.6 |           4802 |          274182 |       1.75139 |             2.2 |      5348119 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 |  8.0265   | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |
+|   2014 |       5 | Minnesota    | MRO           | East North Central |            -0.1 | normal             | intentional attack | vandalism               |               nan |                 1 |              nan |                  nan |       12.12 |        9.71 |        6.49 |          9.28 | 1.58699e+06 | 1.80776e+06 | 1.88793e+06 |   5.28423e+06 |      30.0325 |      34.2104 |      35.7276 |         2345860 |          284978 |            9898 |           2640737 |        88.8335 |        10.7916 |       0.37482  |              53499 |            49091 |          1.08979 |                 1.9 |           5226 |          291955 |       1.79    |             2.2 |      5457125 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 |  0.693147 | 2014-05-11 18:38:00 | 2014-05-11 18:39:00  |
+|   2010 |      10 | Minnesota    | MRO           | East North Central |            -1.5 | cold               | severe weather     | heavy wind              |               nan |              3000 |              nan |                70000 |       10.87 |        8.19 |        6.07 |          8.15 | 1.46729e+06 | 1.80168e+06 | 1.9513e+06  |   5.22212e+06 |      28.0977 |      34.501  |      37.366  |         2300291 |          276463 |           10150 |           2586905 |        88.9206 |        10.687  |       0.392361 |              50447 |            47287 |          1.06683 |                 2.7 |           4571 |          267895 |       1.70627 |             2.1 |      5310903 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 |  8.0067   | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |
+|   2012 |       6 | Minnesota    | MRO           | East North Central |            -0.1 | normal             | severe weather     | thunderstorm            |               nan |              2550 |              nan |                68200 |       11.79 |        9.25 |        6.71 |          9.19 | 1.85152e+06 | 1.94117e+06 | 1.99303e+06 |   5.78706e+06 |      31.9941 |      33.5433 |      34.4393 |         2317336 |          278466 |           11010 |           2606813 |        88.8954 |        10.6822 |       0.422355 |              51598 |            48156 |          1.07148 |                 0.6 |           5364 |          277627 |       1.93209 |             2.2 |      5380443 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 |  7.84424  | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |
+|   2015 |       7 | Minnesota    | MRO           | East North Central |             1.2 | warm               | severe weather     | nan                     |               nan |              1740 |              250 |               250000 |       13.07 |       10.16 |        7.74 |         10.43 | 2.02888e+06 | 2.16161e+06 | 1.77794e+06 |   5.97034e+06 |      33.9826 |      36.2059 |      29.7795 |         2374674 |          289044 |            9812 |           2673531 |        88.8216 |        10.8113 |       0.367005 |              54431 |            49844 |          1.09203 |                 1.7 |           4873 |          292023 |       1.6687  |             2.2 |      5489594 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 |  7.46221  | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |
+
 
 ## Univariate Analysis
 As a part of our Exploratory Data Analysis, we first perform a univariate analysis examining the distribution of three single variables.
@@ -188,12 +209,35 @@ Once we took a look at the value counts list of the regions, we discovered that 
 Beyond that, all of East North Central's pairs had the greatest differences among pairs. Wary of drawing conclusions from minimal data, we elected to avoid using those pairs.
 
 # Framing a Prediction Problem
+Since our dataset is a set of descriptive qualities of power outages as well as their impact, we thought it best to predict the impact of a given outage from the circumstances around it. For impact, we decided to target duration, since it is a useful quality that, when predicted, can inform victims on how long to expect an outage to last. The problem then becomes, what's the best prediction model for the duration of an outage?
 
 # Baseline Model
+Our baseline regression model predicts outage duration using all of the `outages` dataframe features. We evaluate with train/test split and 5-fold cross-validation. This model performs poorly, capturing very little variance in the target. Our metrics include: Train R^2=0.256, Test R^2=0.017, Train MSE≈27,836,705, Test MSE≈26,807,090, CV Mean R^2=0.147
 
 # Final Model
+To improve the model, we switched the target to the log of outage duration.
+We systematically dropped individual columns to assess their contribution to R^2.
+We identified that losing the cause category caused the biggest drop in R^2, indicating it was the most significant.
+The rest did not appear nearly as significant which prompted us to look for further explanatory columns
+
+We then went through and systematically computed correlation R^2 values for every single column in the dataframe
+to find other features to add to the model to predict DUR.LOG
+
+After analyzing each column systematically for correlation with DUR.LOG, U.S. state was the only other feature
+with an R^2 above 0.2 (about 0.22). This combined model with CAUSE.CATEGORY and U.S._STATE gives:
+Train R^2: 0.507, Test R^2: 0.426, CV Mean R^2: 0.453
+
+This begs the question, did we even need U.S. state? As it turns out the answer was no!
+Simply using cause-category as a predictor was the strongest predictor of the logged duration
+This model is less likely to overfit and turned out to be the strongest; the simplest model is the best.
+Train R^2: 0.4416923618233445 Train MSE: 4.09747935754667
+
 
 # Fairness Analysis
+Permutation test to compare model performance across two NERC regions (RFC vs WECC)
+We predict DUR.LOG using cause category and compute MSE separately for RFC and WECC
+Null hypothesis: MSE difference between RFC and WECC is due to chance
+Red line on histogram marks observed MSE difference
 
 # References
 [1] S. Mukherjee, R. Nateghi, and M. Hastak, “Data on major power outage events in the continental U.S.,” Data in Brief, vol. 19, pp. 2079–2083, 2018, doi: 10.1016/j.dib.2018.06.067.
