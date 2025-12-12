@@ -72,6 +72,7 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
   width="1000"
   height="800"
   frameborder="0"
+  style="display: block; margin: 0 auto;"
 ></iframe>
 
 ## Bivariate Analysis
