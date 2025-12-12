@@ -261,10 +261,31 @@ Notably, our model has very few parameters and features. This was after an exhau
 For example, a simple downed line or small case of vandalism would likely take less time than an environment-wide hazard. This is reflected in the coefficients. The easiest way to understand why this model is superior to the baseline model is the increased R<sup>2</sup>, showing strong correlation with the actual values as opposed to the near randomness of the first one.
 
 # Fairness Analysis
-Permutation test to compare model performance across two NERC regions (RFC vs WECC)
-We predict DUR.LOG using cause category and compute MSE separately for RFC and WECC
-Null hypothesis: MSE difference between RFC and WECC is due to chance
-Red line on histogram marks observed MSE difference
+For fairness testing, we wanted to ensure that our predictive model was applicable independent of any region the outage might occur in. To do this, we picked the largest two groups in the NERC outages since a potential discrepancy in accuracy might affect the most people, the WECC and the RFC regions. 
+
+| NERC.REGION   |   count |
+|:--------------|--------:|
+| WECC          |     451 |
+| RFC           |     419 |
+| SERC          |     205 |
+| NPCC          |     150 |
+| TRE           |     111 |
+| SPP           |      67 |
+| MRO           |      46 |
+| FRCC          |      44 |
+| ECAR          |      34 |
+| HECO          |       3 |
+| FRCC, SERC    |       1 |
+| HI            |       1 |
+| PR            |       1 |
+| ASCC          |       1 |
+
+We computed the MSE for each group’s predicted `DUR.LOG` based on their outage causes and then simulated 10,000 random permutations of outage causes to generate an empirical distribution for a hypothesis test. 
+
+**Null hypothesis:** MSE difference between RFC and WECC is due to chance
+**Alternative hypothesis:** The model is more accurate at predicting DUR.LOG for one group over the other. 
+
+With a p-value of 0.38 and a significance level 0.05, the permutation test did not display any particular favoring for one geographical group versus the other. Thus, we did not discover any bias in our model.
 
 # References
 [1] S. Mukherjee, R. Nateghi, and M. Hastak, “Data on major power outage events in the continental U.S.,” Data in Brief, vol. 19, pp. 2079–2083, 2018, doi: 10.1016/j.dib.2018.06.067.
