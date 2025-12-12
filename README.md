@@ -18,7 +18,6 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 |     `OUTAGE.DURATION`     |                                     Duration of outage events (in minutes)                                    |
 |      `DEMAND.LOSS.MW`     | Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported] |
 |    `CUSTOMERS.AFFECTED`   |  Number of customers affected by the power outage event|
-
 |        `U.S._STATE`       |  Represents all the states in the continental US.|
 |       `NERC.REGION`       | The North American Electric Reliability Corporation (NERC) regions involved in the outage event |
 |      `CLIMATE.REGION`     | U.S. Climate regions as specified by National Centers for Environmental Information (nine climatically consistent regions in continental U.S.A.)|
@@ -27,11 +26,9 @@ The initial raw DataFrame consists of 1,534 observations and 57 variables, where
 |      `ANOMALY.LEVEL`      |    Oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season |
 |     `CLIMATE.CATEGORY`    |  the climate episodes corresponding to the years (“Warm”, “Cold” or “Normal”)|
 |      `CAUSE.CATEGORY`     |  Categories of all the events causing the major power outages|
-
 |        `RES.CUSTOMERS`        | Annual number of customers served in the residential electricity sector of the U.S. state |
 |        `COM.CUSTOMERS`        | Annual number of customers served in the commercial electricity sector of the U.S. state |
 |        `IND.CUSTOMERS`        | Annual number of customers served in the industrial electricity sector of the U.S. state |
-
 |    `DUR.LOG`    |  The logged duration of outage events (in minutes)  |
 
 # Data Cleaning and Exploratory Data Analysis
